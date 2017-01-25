@@ -119,6 +119,7 @@ const (
 	LinkTypeARCNetLinux    LinkType = 129
 	LinkTypeLinuxIRDA      LinkType = 144
 	LinkTypeLinuxLAPD      LinkType = 177
+	LinkTypePPI            LinkType = 192
 	LinkTypeLinuxUSB       LinkType = 220
 	LinkTypeIPv4           LinkType = 228
 	LinkTypeIPv6           LinkType = 229
@@ -496,6 +497,7 @@ func init() {
 	LinkTypeMetadata[LinkTypeLinuxUSB] = EnumMetadata{DecodeWith: gopacket.DecodeFunc(decodeUSB), Name: "USB"}
 	LinkTypeMetadata[LinkTypeLinuxSLL] = EnumMetadata{DecodeWith: gopacket.DecodeFunc(decodeLinuxSLL), Name: "Linux SLL"}
 	LinkTypeMetadata[LinkTypePrismHeader] = EnumMetadata{DecodeWith: gopacket.DecodeFunc(decodePrismHeader), Name: "Prism"}
+	LinkTypeMetadata[LinkTypePPI] = EnumMetadata{DecodeWith: gopacket.DecodeFunc(decodePPI), Name: "PPI"}
 
 	FDDIFrameControlMetadata[FDDIFrameControlLLC] = EnumMetadata{DecodeWith: gopacket.DecodeFunc(decodeLLC), Name: "LLC"}
 
